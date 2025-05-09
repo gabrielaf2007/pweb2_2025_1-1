@@ -17,7 +17,11 @@ class TurmaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nome' => $this->faker->word, " " , $this->faker->year,
+            'codigo' => $this->faker->unique()->numerify('TURMA - ####'),
+            'curso_id' => \App\Models\Curso::all()->random()->id,
+            'data_inicio' => $this->faker->date(),
+            'data_fim' => $this->faker->date(),
         ];
     }
 }

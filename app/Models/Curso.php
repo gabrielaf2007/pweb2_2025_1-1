@@ -18,4 +18,9 @@ class Curso extends Model
         'valor',
     ];
 
+    public function turmas()
+    {
+        return $this->hasMany(Turma::class);
+    }
+
 }
